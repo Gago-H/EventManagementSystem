@@ -1,7 +1,10 @@
 ﻿using EMS;
+using EventManagement.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics.Metrics;
+using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,7 +37,27 @@ namespace EventManagement.Controllers
         {
             return _db.Participants.ToList();
         }
-        
+
+        [HttpGet("Entries")]
+        /*
+         * SELECT ID, NAME, COUNT(POPULATION)
+         * FROM Countries
+         * WHERE Countries.ID = ID
+         */
+        public IEnumerable<EventEntries> GetEntries()
+        {
+            return (from Events in _db.Events
+                    join part in _db.Participants on Events.EventId equals part.eId into eventParticipants
+                    select new EventEntries
+                    {
+                        Id = Events.EventId,
+                        Name = Events.Name,
+                        TotalEntries = eventParticipants.Sum(part => part.EntryVal)
+                    }
+                    ).ToList();
+        }
+
+
         // GET: api/<EventController>
         /*[HttpGet]
         public IEnumerable<string> Get()
