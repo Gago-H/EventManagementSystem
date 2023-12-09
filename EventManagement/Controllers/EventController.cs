@@ -39,11 +39,6 @@ namespace EventManagement.Controllers
         }
 
         [HttpGet("Entries")]
-        /*
-         * SELECT ID, NAME, COUNT(POPULATION)
-         * FROM Countries
-         * WHERE Countries.ID = ID
-         */
         public IEnumerable<EventEntries> GetEntries()
         {
             return (from Events in _db.Events
@@ -71,40 +66,8 @@ namespace EventManagement.Controllers
         {
             return "value";
         }
-        /*
-        // LINQ statement to get country info including population
-        [HttpGet("Population/{id}")]
-        public Event? GetPopulation(int id)
-        {
-            /*
-            * SELECT ID, NAME, COUNT(City.Population)
-            * FROM Countries
-            * WHERE Countries.ID = ID
-            *
-            */
-            /*return _db.Countries.Where(c => c.Id == id)
-            2 | P a g e
-            .Select(c => new CountryPopulation()
-            {
-            Id = c.Id,
-            Name = c.Name,
-            Population = c.Cities.Sum(t => t.Population)
-            }).SingleOrDefault();
-            return (from Events in _db.Events
-                    where Events.EventId == id
-                    select Event
-                    {
-                        EventId = Events.EventId,
-                        Name = Events.name,
-                    }
-                    ).SingleOrDefault();
-                    select new CountryPopulation()
-                    {
-                        Id = country.Id,
-                        Name = country.Name,
-                        Population = country.Cities.Sum(t => t.Population)
-                    }).SingleOrDefault();*/
-        //}//end GetPopulation
+        
+ 
 
 
 
