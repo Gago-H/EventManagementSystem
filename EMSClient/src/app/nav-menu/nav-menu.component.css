@@ -1,0 +1,39 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2; /* Change this to your desired primary color */
+  padding: 0 20px;
+}
+
+.header.button:hover {
+  background-color: #f4bd25; /* Adjust hover background color based on your theme */
+}
+
+a {
+  text-decoration: none;
+  color: white; /* Change this to your desired text color */
+  margin: 0 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  flex: 1;
+}
+
+/* Optional: Adjust the button styles */
+mat-flat-button {
+  min-width: 0;
+  margin: 0 5px;
+}

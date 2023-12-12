@@ -1,0 +1,51 @@
+.login {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+}
+
+div button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Adjust button colors */
+button[color="primary"] {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+button[color="secondary"] {
+  background-color: #FF5252;
+  color: #fff;
+}
+
+/* Add some hover effects on buttons */
+button:hover {
+  filter: brightness(90%);
+}
+
+/* Center the form on smaller screens */
+@media (max-width: 600px) {
+  .login {
+    width: 80%;
+  }
+}
