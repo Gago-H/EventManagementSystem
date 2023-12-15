@@ -17,6 +17,7 @@ import { EventsComponent } from './events/events.component';
 import { AuthInterceptor } from './login/auth.interceptor';
 import { RouterModule } from '@angular/router';
 import { ParticipantsComponent } from './participants/participants.component';
+import { EntriesComponent } from './entries/entries.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ NavMenuComponent,
 LoginComponent,
 EventsComponent,
 ParticipantsComponent,
+EntriesComponent,
 ],
 imports: [
 BrowserModule,

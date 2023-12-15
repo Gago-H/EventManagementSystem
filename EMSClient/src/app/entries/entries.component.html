@@ -1,0 +1,28 @@
+<!-- Check if the user is logged in before displaying the Events page -->
+<body>
+    <h1 *ngIf="!isLoggedIn">Please log in to view the entries.</h1>
+    <button *ngIf="!isLoggedIn" mat-flat-button color="primary" (click)="redirectToLogin()">Go to Login</button>
+    
+    <div *ngIf="isLoggedIn">
+        <p>Entries</p>
+        <table class="table table-striped"> 
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Number of Entries</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of entries">
+              <td>{{entry.id}}</td>
+              <td>{{entry.name}}</td>
+              <td>{{entry.totalEntries}}</td>
+            </tr>
+          </tbody>
+        </table>
+       
+    
+      </div>
+    
+    </body>

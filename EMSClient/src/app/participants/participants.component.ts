@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Participant } from './participants';
 import { AuthService } from '../login/auth.service';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router'; // Add this import statement
 
 @Component({

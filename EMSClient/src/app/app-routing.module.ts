@@ -4,10 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
 import { ParticipantsComponent } from './participants/participants.component';
+import { EntriesComponent } from './entries/entries.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'events', component: EventsComponent },
+  { path: 'entries', component: EntriesComponent },
   { path: 'participants', component: ParticipantsComponent},
   { path: 'login', component: LoginComponent },
 ];

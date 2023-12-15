@@ -32,13 +32,14 @@ namespace EventManagement.Controllers
 
         [HttpGet]
         [Route("Participants")]
-        //[Authorize]
+        [Authorize]
         public IEnumerable<Participant> Get1()
         {
             return _db.Participants.ToList();
         }
 
         [HttpGet("Entries")]
+        [Authorize]
         public IEnumerable<EventEntries> GetEntries()
         {
             return (from Events in _db.Events

@@ -480,3 +480,6 @@ $RECYCLE.BIN/
 appsettings1.json
 appsettings.json
 appsettings.Development.json
+appsettings.Production.json
+environment.development.ts
+environment.ts
